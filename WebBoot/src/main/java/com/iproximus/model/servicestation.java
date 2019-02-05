@@ -10,6 +10,7 @@ public class servicestation {
 	private int id;
 	private String name;
 	private String address;
+	
 	public int getId() {
 		return id;
 	}
@@ -28,6 +29,7 @@ public class servicestation {
 	public void setAddress(String address) {
 		this.address = address;
 	}
+	
 	@Override
 	public String toString() {
 		return "servicestation [id=" + id + ", name=" + name + ", address=" + address + "]";

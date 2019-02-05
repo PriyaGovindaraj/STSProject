@@ -15,7 +15,7 @@
 
 </form>
 <form action=getservice>
-<input type="text" name="id"><br><br>
+<input type="text" name="name"><br><br>
 <input type="submit">
 </form>
 </body>
