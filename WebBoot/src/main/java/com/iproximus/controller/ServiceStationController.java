@@ -31,9 +31,9 @@ public class ServiceStationController {
 	public ModelAndView getservicestation(@RequestParam String name) {
 		ModelAndView mv = new ModelAndView("showservice.jsp");
 		servicestation servicestation = repo.findByName(name);
-		System.out.println(repo.findByAddress("Coimbatore"));
+		
 		System.out.println(repo.findByIdGreaterThan(102));
-		System.out.println(repo.findByAddressSorted("Coimbatore"));
+		
 		mv.addObject(servicestation);
 		return mv;
 

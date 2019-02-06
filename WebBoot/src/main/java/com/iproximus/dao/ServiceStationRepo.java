@@ -9,10 +9,8 @@ import com.iproximus.model.servicestation;
 
 public interface ServiceStationRepo extends CrudRepository<servicestation, Integer> {
 
-	List<servicestation> findByAddress(String address);
+	
 	List<servicestation>findByIdGreaterThan(int id);
-	@Query("from servicestation where address=?1 order by name")
-	List<servicestation>findByAddressSorted(String address);
 	servicestation findByName(String name);
 
 }

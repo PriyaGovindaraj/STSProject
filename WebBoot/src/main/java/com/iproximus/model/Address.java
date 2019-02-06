@@ -1,7 +1,12 @@
 package com.iproximus.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Address {
@@ -15,6 +20,10 @@ public class Address {
 	private String phone;
 	private String email;
 	private String website;
+	@OneToMany(mappedBy="address")
+	
+	private List<servicestation> services=new ArrayList<>();
+	
 	public int getAid() {
 		return aid;
 	}
@@ -69,11 +78,18 @@ public class Address {
 	public void setWebsite(String website) {
 		this.website = website;
 	}
-	@Override
-	public String toString() {
-		return "Address [aid=" + aid + ", address1=" + address1 + ", address2=" + address2 + ", city=" + city
-				+ ", state=" + state + ", zip=" + zip + ", phone=" + phone + ", email=" + email + ", website=" + website
-				+ "]";
-	}
-	
-}
+
+	    public List<servicestation> getServices() {
+			return services;
+		}
+		public void setServices(List<servicestation> services) {
+			this.services = services;
+		}
+
+		@Override
+		public String toString() {
+			return "Address [aid=" + aid + ", address1=" + address1 + ", address2=" + address2 + ", city=" + city
+					+ ", state=" + state + ", zip=" + zip + ", phone=" + phone + ", email=" + email + ", website="
+					+ website + ", services=" + services + "]";
+		}
+		}

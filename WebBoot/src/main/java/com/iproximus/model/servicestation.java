@@ -2,6 +2,7 @@ package com.iproximus.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 
@@ -9,7 +10,8 @@ public class servicestation {
 	@Id
 	private int id;
 	private String name;
-	private String address;
+	@ManyToOne
+	 private Address address;
 	
 	public int getId() {
 		return id;
@@ -23,17 +25,15 @@ public class servicestation {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getAddress() {
+	public Address getAddress() {
 		return address;
 	}
-	public void setAddress(String address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 	
 	@Override
 	public String toString() {
 		return "servicestation [id=" + id + ", name=" + name + ", address=" + address + "]";
+	} 
 	}
-	
-
-}

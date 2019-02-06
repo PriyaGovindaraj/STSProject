@@ -1,7 +1,11 @@
 package com.iproximus.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Package {
@@ -11,6 +15,7 @@ public class Package {
 	private String pdetails;
 	private String vtype;
 	private String price;
+	
 	public int getPid() {
 		return pid;
 	}
@@ -41,7 +46,8 @@ public class Package {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	@Override
+	
+		@Override
 	public String toString() {
 		return "Package [pid=" + pid + ", pname=" + pname + ", pdetails=" + pdetails + ", vtype=" + vtype + ", price="
 				+ price + "]";
